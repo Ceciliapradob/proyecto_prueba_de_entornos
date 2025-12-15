@@ -55,13 +55,27 @@ function App() {
   }
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '16px' }}>
-      <h1>Gestión de turnos</h1>
-      <AppointmentForm onAddAppointment={handleAddAppointment} />
-      <AppointmentList
-        appointments={appointments}
-        onDeleteAppointment={handleDeleteAppointment}
-      />
+    <div className="app-container">
+      <header className="app-header">
+        <div className="app-title">
+          <h1>Gestión de turnos</h1>
+          <span>Alta, consulta y baja simple de turnos</span>
+        </div>
+        <span className="badge">Mock + localStorage</span>
+      </header>
+
+      <div className="app-content">
+        <section className="card">
+          <AppointmentForm onAddAppointment={handleAddAppointment} />
+        </section>
+
+        <section className="card">
+          <AppointmentList
+            appointments={appointments}
+            onDeleteAppointment={handleDeleteAppointment}
+          />
+        </section>
+      </div>
     </div>
   )
 }
