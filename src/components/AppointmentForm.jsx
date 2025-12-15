@@ -32,41 +32,43 @@ function AppointmentForm({ onAddAppointment }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: '16px' }}>
+    <form onSubmit={handleSubmit}>
       <h2>Nuevo turno</h2>
-      <div style={{ marginBottom: '8px' }}>
-        <label>
-          Nombre:
+      <p>Completá los datos del paciente y la fecha del turno.</p>
+
+      <div className="form-grid">
+        <div className="field">
+          <label htmlFor="name">Nombre</label>
           <input
+            id="name"
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
-            style={{ marginLeft: '8px' }}
+            placeholder="Ej: Juan Pérez"
           />
-        </label>
-      </div>
-      <div style={{ marginBottom: '8px' }}>
-        <label>
-          Fecha:
+        </div>
+
+        <div className="field">
+          <label htmlFor="date">Fecha</label>
           <input
+            id="date"
             type="date"
             value={date}
             onChange={(event) => setDate(event.target.value)}
-            style={{ marginLeft: '8px' }}
           />
-        </label>
-      </div>
-      <div style={{ marginBottom: '8px' }}>
-        <label>
-          Hora:
+        </div>
+
+        <div className="field">
+          <label htmlFor="time">Hora</label>
           <input
+            id="time"
             type="time"
             value={time}
             onChange={(event) => setTime(event.target.value)}
-            style={{ marginLeft: '8px' }}
           />
-        </label>
+        </div>
       </div>
+
       <button type="submit">Agregar turno</button>
     </form>
   )

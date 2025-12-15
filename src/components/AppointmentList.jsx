@@ -5,18 +5,20 @@ function AppointmentList({ appointments, onDeleteAppointment }) {
     <div>
       <h2>Lista de turnos</h2>
       {appointments.length === 0 ? (
-        <p>No hay turnos cargados.</p>
+        <p className="no-appointments">No hay turnos cargados.</p>
       ) : (
-        <ul>
+        <ul className="appointments-list">
           {appointments.map((appointment) => (
-            <li key={appointment.id} style={{ marginBottom: '8px' }}>
-              <span>
-                <strong>{appointment.name}</strong> - {appointment.date} - {appointment.time}
-              </span>
+            <li key={appointment.id} className="appointment-item">
+              <div className="appointment-main">
+                <span className="appointment-name">{appointment.name}</span>
+                <span className="appointment-meta">
+                  {appointment.date} · {appointment.time}
+                </span>
+              </div>
               <button
                 type="button"
                 onClick={() => onDeleteAppointment(appointment.id)}
-                style={{ marginLeft: '8px' }}
               >
                 Eliminar
               </button>
