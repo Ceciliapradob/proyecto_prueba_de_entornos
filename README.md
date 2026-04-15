@@ -1,3 +1,5 @@
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=ceciliapradob&show_icons=true&theme=radical)
+
 ![GitHub Streak](https://streak-stats.demolab.com/?user=ceciliapradob)
 
 # React + Vite
